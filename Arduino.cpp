@@ -1,10 +1,11 @@
 // Basic demo for accelerometer readings from Adafruit MPU6050
-// This project is made by ADAFRUIT
+// this project is edited version of adafruit's version of mpu-6050 plotter
 #include <Adafruit_MPU6050.h>
 #include <Adafruit_Sensor.h>
 #include <Wire.h>
 
 Adafruit_MPU6050 mpu;
+unsigned long current_time;
 
 void setup(void) {
   Serial.begin(115200);
@@ -32,8 +33,13 @@ void loop() {
   /* Get new sensor events with the readings */
   sensors_event_t a, g, temp;
   mpu.getEvent(&a, &g, &temp);
-
+  
+  /* Calculates surrent time */
+  current_time = millis();
+  
   /* Print out the values */
+  Serial.print(current_time);
+  Serial.print(",");
   Serial.print(a.acceleration.x);
   Serial.print(",");
   Serial.print(a.acceleration.y);
@@ -49,5 +55,5 @@ void loop() {
   Serial.print(temp.temperature);
   Serial.println("");
 
-  delay(100);
+  delay(10);
 }
