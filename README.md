@@ -16,7 +16,7 @@ After connecting all pins, now connect you arduino to your computer with usb/ser
 
 Now open the `Data-log.py` and changer your serial interface where COM4 is written and run the program it will automatically create a file name `data.csv` and start recording data to it
 
-That's it for today. Have a nice days.
+That's it for today. Have a nice day.
 
 # Donate
 * PayPal -> balharav3@gmail.com
